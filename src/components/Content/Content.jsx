@@ -1,58 +1,54 @@
 import React, { useEffect, useState } from "react";
-
+import { getNotification } from "./../../helpers/getUser";
 export default function Content() {
-  const [users, setUser] = useState([]);
+  const notis = getNotification();
+
   return (
     <div className="forum-content">
-      <div class="row">
-        <form action="" method="POST" role="form">
-          <legend>Form title</legend>
-
-          <div class="form-group">
-            <label for="">label</label>
-            <input
-              type="text"
-              class="form-control"
-              id=""
-              placeholder="Input field"
-            />
+      <div className="content-right">
+        <div className="anounce box">
+          <div className="pb10">
+            <i className="bx bxs-notepad" />
+            <span>Thông báo</span>
           </div>
+          <div>
+            <a href="#">
+              <i className="bx bxs-circle" />
+              Lịch thi học kỳ I 2022 - 2023
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <i className="bx bxs-circle" />
+              Lịch họp phụ huynh học kỳ I 2022 - 2023
+            </a>
+          </div>
+          {/*  */}
 
-          <button type="submit" class="btn btn-primary">
-            Submit
-          </button>
-        </form>
+          <div className="pt10 pb10">
+            <i className="bx bxs-help-circle" />
+            <span>Trợ giúp</span>
+          </div>
+          <div>
+            <a href="#">
+              <i className="bx bxs-circle" />
+              Cần giúp đỡ?
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <i className="bx bxs-circle" />
+              Tư vấn tuyển sinh
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <i className="bx bxs-circle" />
+              Thông tin về nhà trường
+            </a>
+          </div>
+        </div>
       </div>
-
-      {[1].map(function (user) {
-        return (
-          <div className="box">
-            <div className="box-profile">
-              <img
-                className="box-img-avatar"
-                src="./img/avatar.png"
-                alt=""
-                srcSet
-              />
-              <div className="box-info">
-                <div className="box-user-top">
-                  <h4 className="card-user-name">{user.name}</h4>
-                  <i className="bx bxs-check-circle" />
-                </div>
-                <div className="box-user-desc">5 min ago</div>
-              </div>
-            </div>
-            <div className="box-question">
-              <div className="box-main-question">
-                Mọi người giải thích giúp mình câu này được không ạ
-              </div>
-              <div className="box-subtitle">
-                Mọi người giải thích giúp mình câu này được không ạ
-              </div>
-            </div>
-          </div>
-        );
-      })}
     </div>
   );
 }

@@ -11,10 +11,22 @@ export default function App() {
       .then((json) => {
         localStorage.setItem("users", JSON.stringify(json));
       });
+
+    fetch("http://127.0.0.1:8000/student")
+      .then((response) => response.json())
+      .then((json) => {
+        localStorage.setItem("students", JSON.stringify(json));
+      });
+    fetch("http://127.0.0.1:8000/api/subject")
+      .then((response) => response.json())
+      .then((json) => {
+        localStorage.setItem("subjects", JSON.stringify(json));
+      });
   };
   useEffect(() => {
     getApi();
   }, []);
+
   return (
     <>
       <div className="App">

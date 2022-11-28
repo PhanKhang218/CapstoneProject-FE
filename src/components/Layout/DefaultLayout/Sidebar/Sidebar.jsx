@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./sidebar.css";
 export default function Sidebar() {
   const [closeClass, setCloseClass] = useState("");
@@ -30,6 +31,7 @@ export default function Sidebar() {
       setCloseClass("close");
     }
   };
+
   return (
     <div>
       <div className="content">
@@ -41,7 +43,7 @@ export default function Sidebar() {
               </span>
               <div className="text logo-text">
                 <span className="name">IPTC</span>
-                <span className="profession">Khang Đtrai </span>
+                <span className="profession">C1SE.45</span>
               </div>
             </div>
             <i className="bx bx-chevron-right toggle" onClick={handleToggle} />
@@ -54,19 +56,19 @@ export default function Sidebar() {
               </li>
               <ul className="menu-links">
                 <li id="dashboard" className="nav-link">
-                  <a href="#">
+                  <a href="/statistic">
                     <i className="bx bx-home-alt icon" />
                     <span className="text nav-text">Dashboard</span>
                   </a>
                 </li>
                 <li className="nav-link">
-                  <a href="#">
+                  <a href="/chart">
                     <i className="bx bx-bar-chart-alt-2 icon" />
                     <span className="text nav-text">Revenue</span>
                   </a>
                 </li>
                 <li className="nav-link">
-                  <a href="#">
+                  <a href="/noti">
                     <i className="bx bx-bell icon" />
                     <span className="text nav-text">Notifications</span>
                   </a>
@@ -78,22 +80,22 @@ export default function Sidebar() {
                   </a>
                 </li>
                 <li className="nav-link">
-                  <a href="#">
+                  <a href="/forum">
                     <i className="bx bx-heart icon" />
-                    <span className="text nav-text">Likes</span>
+                    <span className="text nav-text">Forum</span>
                   </a>
                 </li>
                 <li className="nav-link">
                   <a href="#">
                     <i className="bx bx-wallet icon" />
-                    <span className="text nav-text">Wallets</span>
+                    <span className="text nav-text">Schedule</span>
                   </a>
                 </li>
               </ul>
             </div>
             <div className="bottom-content">
               <li id="logout">
-                <a href="#">
+                <a href="/">
                   <i className="bx bx-log-out icon" />
                   <span className="text nav-text">Logout</span>
                 </a>
